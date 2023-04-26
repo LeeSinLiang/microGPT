@@ -1,0 +1,14 @@
+{
+	"batch_size": 64,
+	"max_length": 256,
+	"lr": 3e-4,
+	"n_steps": 5000,
+	"eval_interval": 500,
+	"eval_iters": 200,
+	"n_emb": 384,
+	"n_head": 6,
+	"n_layer": 6,
+	"pDropout": 0.2,
+	"grad_norm_clip":1.0,
+	"vocab_size": 97
+}

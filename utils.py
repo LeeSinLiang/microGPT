@@ -1,8 +1,6 @@
 import torch
 import json
 from torch.nn import functional as F
-from gpt import GPT
-
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
@@ -43,14 +41,6 @@ def top_k_top_p_filter(logits, top_k:int=0, top_p:float=1.0):
 		indices_to_remove = filter.scatter(1, sorted_indices, filter)
 		logits[indices_to_remove] = float('-inf')
 	return logits
-
-def load_model(model_file, cfg):
-	model = GPT(cfg.vocab_size, cfg.max_length, cfg.n_emb, cfg.n_head, cfg.n_layer)
-	model = model.to(device)
-	model.load_state_dict(torch.load(model_file, map_location=device))
-	model.eval()
-
-	return model
 
 def load_tokenizer(vocab_file):
 	with open(vocab_file, 'r') as f:

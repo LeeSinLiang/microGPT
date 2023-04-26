@@ -2,9 +2,17 @@ import json
 import torch
 from gpt import *
 from config import GPTConfig
-from utils import load_model, load_tokenizer
+from utils import load_tokenizer
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+
+def load_model(model_file, cfg):
+	model = GPT(cfg.vocab_size, cfg.max_length, cfg.n_emb, cfg.n_head, cfg.n_layer)
+	model = model.to(device)
+	model.load_state_dict(torch.load(model_file, map_location=device))
+	model.eval()
+
+	return model
 
 # Parameters (Edit here):
 n_tokens = 1000

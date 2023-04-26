@@ -6,8 +6,8 @@ from torch.utils.data import DataLoader
 
 from config import GPTConfig
 from dataset import CorpusDataset
-from utils import get_batch, eval_loss
 from gpt import GPT
+from utils import eval_loss
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 

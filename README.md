@@ -1,13 +1,13 @@
 # microGPT: Building GPT from scratch
-microGPT is a lightweight implementation of the Generative Pre-trained Transformer (GPT) model for natural language processing tasks. It is designed to be simple and easy to use, making it a great option for small-scale applications or for learning and experimenting with generative models. 
+microGPT is a lightweight implementation of the Generative Pre-trained Transformer (GPT) model for natural language processing tasks. It is designed to be simple and easy to use, making it a great option for small-scale applications or for learning and experimenting with generative models.
 ## Features
 -  Lightweight implementation of the GPT models
 -  Customizable hyperparameters for model configuration
--  Design for specific topic generation instead of general text generation (i.e. generate recipe) 
+-  Design for specific topic generation instead of general text generation (i.e. generate recipe)
 -  Supports Top K Top P filtering and temperature scaling
 -  Written in Python with PyTorch as the deep learning framework
 
-## Installation 
+## Installation
 1. Clone the repo and run `pip install -r requirements.txt`
 
 ## Usage
@@ -22,7 +22,7 @@ n_tokens = 1000
 temperature = 0.8
 top_k = 0
 top_p = 0.9
-model_file = 'models/recipe-0.7157.pth'
+model_file = 'models/recipe-microGPT.pth'
 
 # Edit input here
 context = "Title: Cheesy Chicken Salad With Pepper And Grated Parmesan Cheese"

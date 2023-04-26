@@ -19,7 +19,7 @@ n_tokens = 1000
 temperature = 0.8
 top_k = 0
 top_p = 0.9
-model_file = 'models/recipe-0.7157.pth'
+model_file = 'models/recipe-microGPT.pth'
 
 with open('config/config.json', 'r') as f:
     config = json.load(f)

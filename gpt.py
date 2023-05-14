@@ -95,7 +95,7 @@ class GPT(nn.Module):
 		x = self.blocks(x)
 		logits = self.lm_head(x) # (B, T, vocab_size)
 
-		if target == None:
+		if target is None:
 			loss = None
 		else:
 			B, T, C = logits.shape

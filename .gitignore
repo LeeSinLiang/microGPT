@@ -160,8 +160,6 @@ cython_debug/
 #.idea/
 
 .vscode/
-models/
-datasets/
 
 # datasets
 *.csv

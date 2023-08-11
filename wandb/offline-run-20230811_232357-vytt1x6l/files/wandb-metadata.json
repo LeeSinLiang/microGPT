@@ -1,0 +1,205 @@
+{
+    "os": "Linux-5.15.90.1-microsoft-standard-WSL2-x86_64-with-glibc2.35",
+    "python": "3.11.3",
+    "heartbeatAt": "2023-08-11T15:23:57.740464",
+    "startedAt": "2023-08-11T15:23:57.606511",
+    "docker": null,
+    "cuda": null,
+    "args": [],
+    "state": "running",
+    "program": "/home/sllee/coding/microGPT/microGPT-release/train.py",
+    "codePath": "train.py",
+    "git": {
+        "remote": "https://github.com/LeeSinLiang/microGPT.git",
+        "commit": "d5cc5fc66f793cdc48e0607d7873246796fdaf8b"
+    },
+    "email": "mangojamlee@gmail.com",
+    "root": "/home/sllee/coding/microGPT/microGPT-release",
+    "host": "LAPTOP-4155DLJ5",
+    "username": "sllee",
+    "executable": "/home/sllee/anaconda3/envs/microGPT/bin/python",
+    "cpu_count": 16,
+    "cpu_count_logical": 32,
+    "cpu_freq": {
+        "current": 2419.1999999999985,
+        "min": 0.0,
+        "max": 0.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 2419.2,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2419.2,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2419.2,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2419.2,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2419.2,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2419.2,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2419.2,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2419.2,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2419.2,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2419.2,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2419.2,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2419.2,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2419.2,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2419.2,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2419.2,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2419.2,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2419.2,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2419.2,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2419.2,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2419.2,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2419.2,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2419.2,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2419.2,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2419.2,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2419.2,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2419.2,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2419.2,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2419.2,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2419.2,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2419.2,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2419.2,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2419.2,
+            "min": 0.0,
+            "max": 0.0
+        }
+    ],
+    "disk": {
+        "total": 1006.853931427002,
+        "used": 261.3039855957031
+    },
+    "gpu": "NVIDIA GeForce RTX 4070 Laptop GPU",
+    "gpu_count": 1,
+    "gpu_devices": [
+        {
+            "name": "NVIDIA GeForce RTX 4070 Laptop GPU",
+            "memory_total": 8585740288
+        }
+    ],
+    "memory": {
+        "total": 7.568195343017578
+    }
+}

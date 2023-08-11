@@ -18,52 +18,6 @@ class MultiInputSequential(nn.Sequential):
         return inputs
 
 
-class HeadAttention(nn.Module):
-    def __init__(self, head_size, embedding_dim, max_length, pDropout=0.2):
-        super().__init__()
-        self.query = nn.Linear(embedding_dim, head_size, bias=False)
-        self.key = nn.Linear(embedding_dim, head_size, bias=False)
-        self.value = nn.Linear(embedding_dim, head_size, bias=False)
-        # Decoder block: prevent future tokens from talking to current tokens. Only past tokens can talk to current tokens.
-        self.register_buffer('tril', torch.tril(
-            torch.ones(max_length, max_length)))
-        self.head_size = head_size
-        self.dropout = nn.Dropout(pDropout)
-
-    def forward(self, x, attention_mask=None):
-        B, T, C = x.shape
-        # change to self.head_size # scaled attention (normilization) by dividing it
-        qK = self.query(x) @ self.key(x).transpose(-2, -1) * \
-            (1.0 / math.sqrt(self.head_size))
-        if attention_mask is not None:  # doesnt work, rows of -inf -> nan in cross entropy loss
-            qK = attention_mask.unsqueeze(2) * qK
-            qK = qK.masked_fill(qK == 0, float('-inf'))
-        qK = qK.masked_fill(self.tril[:T, :T] == 0, float('-inf'))  # (B, T, T)
-        qK = F.softmax(qK, dim=-1)
-        qK = self.dropout(qK)
-        qK = qK.masked_fill(torch.isnan(qK), 0)
-        out = qK @ self.value(x)
-        return out
-
-
-class MultiHeadAttention(nn.Module):
-    # mulitple heads of self attention in parallel
-
-    def __init__(self, num_heads, head_size, n_emb, max_length, pDropout):
-        super().__init__()
-        # self.heads = nn.ModuleList([HeadAttention(head_size, embedding_dim, max_length) for _ in range(num_heads)])
-        self.heads = nn.ModuleList(
-            [HeadAttention(head_size, n_emb, max_length) for _ in range(num_heads)])
-        # linear transformation of self attention
-        self.projection = nn.Linear(n_emb, n_emb)
-        self.dropout = nn.Dropout(pDropout)
-
-    def forward(self, x, attention_mask):
-        out = torch.cat([h(x, attention_mask) for h in self.heads], dim=-1)
-        out = self.dropout(self.projection(out))
-        return out
-
-
 class CausalSelfAttention(nn.Module):
     def __init__(self, config):
         super().__init__()

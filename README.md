@@ -1,8 +1,6 @@
 # microGPT: Building GPT from scratch
 microGPT is a lightweight implementation of the Generative Pre-trained Transformer (GPT) model for natural language processing tasks. It is designed to be simple and easy to use, making it a great option for small-scale applications or for learning and experimenting with generative models.
 
-**Beta Production (BPE Tokenizer):** https://microgpt.streamlit.app/
-
 ## Features
 -  Lightweight implementation of the GPT models
 -  Customizable hyperparameters for model configuration

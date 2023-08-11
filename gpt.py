@@ -24,7 +24,6 @@ class HeadAttention(nn.Module):
         self.query = nn.Linear(embedding_dim, head_size, bias=False)
         self.key = nn.Linear(embedding_dim, head_size, bias=False)
         self.value = nn.Linear(embedding_dim, head_size, bias=False)
-        # not a model parameter, just a variable, hence called as buffer. Have to call register_buffer to denote it
         # Decoder block: prevent future tokens from talking to current tokens. Only past tokens can talk to current tokens.
         self.register_buffer('tril', torch.tril(
             torch.ones(max_length, max_length)))
@@ -99,10 +98,7 @@ class CausalSelfAttention(nn.Module):
                 attn_mask == 0, -float('inf')).unsqueeze(1).to(query.dtype)
             attn_mask = attn_mask.masked_fill(attn_mask == 1, 0) # dirty workaround
         if self.flash:
-            # out = F.scaled_dot_product_attention(
-            #     query, key, value, attn_mask if attn_mask is not None else None, self.dropout, is_causal=False if attn_mask is not None else True)
             out = F.scaled_dot_product_attention(query, key, value, attn_mask=None, dropout_p=self.dropout if self.is_training else 0, is_causal=True)
-            # out = out.masked_fill(torch.isnan(out), 0)
         else:
             # scaled attention (normilization) by dividing it
             if attn_mask is None:

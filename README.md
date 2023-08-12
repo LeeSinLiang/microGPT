@@ -4,7 +4,7 @@ microGPT is a lightweight implementation of the Generative Pre-trained Transform
 ## Features
 -  Lightweight implementation of the GPT models
 -  Trained on a [small scaled dataset](https://arxiv.org/abs/2304.08442) (6 GB)
--  Designed to be train on consumer GPU (RTX 4060)
+-  Designed to be trained on consumer GPU (RTX 4060 8GB)
 -  Small number of parameters (82 Million!)
 -  Customizable hyperparameters for model configuration
 -  Supports Top K Top P filtering and temperature scaling
@@ -20,11 +20,11 @@ microGPT is a lightweight implementation of the Generative Pre-trained Transform
 1. Clone the repo and run `pip install -r requirements.txt`
 
 ## Usage
-1. Run `tokenizer/train_tokenizer.py` to generate tokenizer file. The model will tokenize text based on it.
+1. Run `tokenizer/train_tokenizer.py` to generate the tokenizer file. The model will tokenize text based on it.
 2. Run `datasets/prepare_dataset.py` to generate dataset files.
 3. Run `train.py` to start training~
 
-**Modify the files stated above if you wish to change its parameters.**
+**Modify the files stated above if you wish to change their parameters.**
 
 ## Usage (Inference)
 To edit model generation parameters, head over `inference.py` to this section:

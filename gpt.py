@@ -29,7 +29,6 @@ class CausalSelfAttention(nn.Module):
         self.n_head = config.n_head
         self.n_embd = config.n_embd
         self.dropout = config.dropout
-        self.is_training = config.training
         self.flash = hasattr(torch.nn.functional,
                              'scaled_dot_product_attention')
         if not self.flash:
@@ -50,9 +49,9 @@ class CausalSelfAttention(nn.Module):
                 diagonal=0).to(device) * attn_mask.unsqueeze(1)
             attn_mask = attn_mask.masked_fill(
                 attn_mask == 0, -float('inf')).unsqueeze(1).to(query.dtype)
-            attn_mask = attn_mask.masked_fill(attn_mask == 1, 0) # dirty workaround
+            attn_mask = attn_mask.masked_fill(attn_mask == 1, 0)
         if self.flash:
-            out = F.scaled_dot_product_attention(query, key, value, attn_mask=None, dropout_p=self.dropout if self.is_training else 0, is_causal=True)
+            out = F.scaled_dot_product_attention(query, key, value, attn_mask=None, dropout_p=self.dropout if self.training else 0, is_causal=True)
         else:
             # scaled attention (normilization) by dividing it
             if attn_mask is None:
@@ -114,7 +113,6 @@ class GPT(nn.Module):
         # original is embedding_dim
         self.lm_head = nn.Linear(config.n_embd, config.vocab_size)
         self.max_length = config.max_length
-        self.pad_token = config.pad_token
         self.apply(self._init_weights)
 
     def _init_weights(self, module):
@@ -125,7 +123,7 @@ class GPT(nn.Module):
         elif isinstance(module, nn.Embedding):
             torch.nn.init.normal_(module.weight, mean=0.0, std=0.02)
 
-    def forward(self, idx, attention_mask=None, target=None, ignore=False):
+    def forward(self, idx, attention_mask=None, target=None, pad_token=None):
         B, T = idx.shape
 
         tok_emb = self.embedding_table(idx)  # (B, T, C)
@@ -141,9 +139,9 @@ class GPT(nn.Module):
             B, T, C = logits.shape
             logits = logits.view(B*T, C)
             target = target.view(-1)  # (B*T)
-            if attention_mask is not None or ignore is True:
+            if pad_token is not None:
                 loss = F.cross_entropy(
-                    logits, target, ignore_index=self.pad_token)  # ignore pad_token
+                    logits, target, ignore_index=pad_token)  # ignore pad_token
             else:
                 loss = F.cross_entropy(logits, target)
         return (logits, loss)

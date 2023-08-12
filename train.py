@@ -29,7 +29,7 @@ config_file="config/config.json"
 # model config
 max_length = 512
 batch_size = 12
-NUM_ACCUMULATION_STEPS = 5 * 8
+num_accumulation_steps = 5 * 8
 n_steps = 600000
 epochs = 1
 grad_norm_clip = 1.0
@@ -156,7 +156,7 @@ def estimate_loss(model, eval_iters):
             k = 0
             while k < eval_iters:
                 xBatch, yBatch = get_batch(split)
-                _, loss = model(xBatch, target=yBatch, ignore=True)
+                _, loss = model(xBatch, target=yBatch)
                 losses[k] = loss.item()
                 k += 1
                 eval_steps.set_description('Loss Estimation')
@@ -187,7 +187,7 @@ if __name__ == '__main__':
 
     config = GPTConfig(**config)
     print(
-        f'Tokenizer padding: {config.pad_token} {tokenizer.pad_token} {tokenizer.pad_token_id}. Max length: {config.max_length} Vocab Size: {config.vocab_size}')
+        f'Max length: {config.max_length} Vocab Size: {config.vocab_size}')
     model = GPT(config)
     model = model.to(device)
     step = 0
@@ -233,12 +233,12 @@ if __name__ == '__main__':
                 param_group['lr'] = lr
 
             with torch.autocast(device_type=device_type):
-                logits, loss = model(xBatch, target=yBatch, ignore=True)
+                logits, loss = model(xBatch, target=yBatch)
 
-            scaler.scale(loss / NUM_ACCUMULATION_STEPS).backward()
+            scaler.scale(loss / num_accumulation_steps).backward()
             t_steps.update(1)
             t_steps.set_postfix(step_loss=loss.item(), learning_rate=lr)
-            if ((step + 1) % NUM_ACCUMULATION_STEPS == 0):
+            if ((step + 1) % num_accumulation_steps == 0):
                 scaler.unscale_(optimizer)
                 torch.nn.utils.clip_grad_norm_(model.parameters(), 1.0)
                 scaler.step(optimizer)

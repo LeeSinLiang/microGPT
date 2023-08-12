@@ -8,5 +8,3 @@ class GPTConfig:
     n_head:int
     n_layer:int
     dropout:float
-    training:bool
-    pad_token:int

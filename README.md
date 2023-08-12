@@ -39,6 +39,9 @@ model_path = 'models/microGPT.pth'
 # Edit input here
 context = "The magical wonderland of"
 ```
+
+Interested to deploy as a web app? Check out [microGPT-deploy](https://github.com/LeeSinLiang/microGPT-deploy) !
+
 ## Contribution
 If you would like to contribute, please follow these guidelines:
 

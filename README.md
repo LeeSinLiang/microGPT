@@ -49,9 +49,7 @@ Interested to deploy as a web app? Check out [microGPT-deploy](https://github.co
 
 2. **Learning Playground:** Designed for individuals eager to delve into the world of AI, microGPT's architecture offers a unique opportunity to grasp the inner workings of generative models. It's a launchpad for honing your skills and deepening your understanding.
 
-3. **Experimentation Hub:** microGPT encourages experimentation with generative AI. Whether you're a researcher pushing boundaries or a developer crafting innovative solutions, microGPT invites you to explore the possibilities.
-
-4. **Small-Scale Powerhouse:** Beyond learning and experimentation, microGPT is a suitable option for small-scale applications. It empowers you to integrate AI-powered language generation into projects where efficiency and performance are paramount.
+3. **Small-Scale Powerhouse:** Beyond learning and experimentation, microGPT is a suitable option for small-scale applications. It empowers you to integrate AI-powered language generation into projects where efficiency and performance are paramount.
 
 ## 🛠️ Empowerment Through Adaptability:
 
@@ -59,7 +57,7 @@ Interested to deploy as a web app? Check out [microGPT-deploy](https://github.co
 
 2. **Learning Journey:** Use microGPT as a stepping stone to comprehend the foundations of generative models. Its accessible design and documentation provide an ideal environment for those new to AI.
 
-3. **Experimentation Lab:** Engage in experiments by tweaking and testing microGPT's parameters. The model's efficiency and versatility provide a fertile ground for innovation.
+3. **Experimentation Lab:** Engage in experiments by tweaking and testing microGPT's parameters. The model's simplicity and versatility provide a fertile ground for innovation.
 
 
 ## Contribution
@@ -81,6 +79,6 @@ By contributing to this repository, you agree to abide by our [Code of Conduct](
 - [Huggingface GPT 2 implementation](https://github.com/huggingface/transformers/tree/main/src/transformers/models/gpt2)
 
 ## Credits
-This model is inspired by Andrej Karpathy [Let's build GPT from scratch video](https://youtu.be/kCc8FmEb1nY) and Andrej Kaparthy [nanoGPT](https://github.com/karpathy/nanoGPT/) with modifications for my own uses.
+This model is inspired by Andrej Karpathy [Let's build GPT from scratch video](https://youtu.be/kCc8FmEb1nY) and Andrej Kaparthy [nanoGPT](https://github.com/karpathy/nanoGPT/) with modifications for this project.
 
 

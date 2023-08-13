@@ -59,7 +59,7 @@ Interested to deploy as a web app? Check out [microGPT-deploy](https://github.co
 
 2. **Learning Journey:** Use microGPT as a stepping stone to comprehend the foundations of generative models. Its accessible design and documentation provide an ideal environment for those new to AI.
 
-3. **Experimentation Lab:** Engage in groundbreaking experiments by tweaking and testing microGPT's parameters. The model's efficiency and versatility provide a fertile ground for innovation.
+3. **Experimentation Lab:** Engage in experiments by tweaking and testing microGPT's parameters. The model's efficiency and versatility provide a fertile ground for innovation.
 
 
 ## Contribution

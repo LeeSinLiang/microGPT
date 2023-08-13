@@ -1,3 +1,4 @@
+
 # microGPT: Building GPT from scratch
 microGPT is a lightweight implementation of the Generative Pre-trained Transformer (GPT) model for natural language processing tasks. It is designed to be simple and easy to use, making it a great option for small-scale applications or for learning and experimenting with generative models.
 
@@ -9,7 +10,6 @@ microGPT is a lightweight implementation of the Generative Pre-trained Transform
 -  Customizable hyperparameters for model configuration
 -  Supports Top K Top P filtering and temperature scaling
 -  Written in Python with PyTorch as the deep learning framework
-
 
 <p align="center" style="margin: 3%;">
 	<img align="center" src="assets/val_loss_wandb.png" />
@@ -41,6 +41,26 @@ context = "The magical wonderland of"
 ```
 
 Interested to deploy as a web app? Check out [microGPT-deploy](https://github.com/LeeSinLiang/microGPT-deploy) !
+
+
+## 🌟 Advantages of microGPT:
+
+1. **From Scratch Efficiency:** Developed from the ground up, microGPT represents a streamlined approach to the esteemed GPT model. It showcases remarkable efficiency while maintaining a slight trade-off in quality.
+
+2. **Learning Playground:** Designed for individuals eager to delve into the world of AI, microGPT's architecture offers a unique opportunity to grasp the inner workings of generative models. It's a launchpad for honing your skills and deepening your understanding.
+
+3. **Experimentation Hub:** microGPT encourages experimentation with generative AI. Whether you're a researcher pushing boundaries or a developer crafting innovative solutions, microGPT invites you to explore the possibilities.
+
+4. **Small-Scale Powerhouse:** Beyond learning and experimentation, microGPT is a suitable option for small-scale applications. It empowers you to integrate AI-powered language generation into projects where efficiency and performance are paramount.
+
+## 🛠️ Empowerment Through Adaptability:
+
+1. **Customization Capabilities:** microGPT's adaptability empowers you to modify and fine-tune the model to suit your specific goals, offering a canvas for creating AI solutions tailored to your requirements.
+
+2. **Learning Journey:** Use microGPT as a stepping stone to comprehend the foundations of generative models. Its accessible design and documentation provide an ideal environment for those new to AI.
+
+3. **Experimentation Lab:** Engage in groundbreaking experiments by tweaking and testing microGPT's parameters. The model's efficiency and versatility provide a fertile ground for innovation.
+
 
 ## Contribution
 If you would like to contribute, please follow these guidelines:

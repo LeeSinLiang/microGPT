@@ -4,7 +4,7 @@ microGPT is a lightweight implementation of the Generative Pre-trained Transform
 
 ## Features
 -  Lightweight implementation of the GPT models
--  Trained on a [small scaled dataset](https://arxiv.org/abs/2304.08442) (6 GB)
+-  Trained on a [small scaled diverse dataset](https://arxiv.org/abs/2304.08442) (6 GB)
 -  Designed to be trained on consumer GPU (RTX 4060 8GB)
 -  Small number of parameters (82 Million!)
 -  Customizable hyperparameters for model configuration

@@ -43,7 +43,7 @@ context = "The magical wonderland of"
 Interested to deploy as a web app? Check out [microGPT-deploy](https://github.com/LeeSinLiang/microGPT-deploy) !
 
 
-## 🌟 Advantages of microGPT:
+## Advantages of microGPT:
 
 1. **From Scratch Efficiency:** Developed from the ground up, microGPT represents a streamlined approach to the esteemed GPT model. It showcases remarkable efficiency while maintaining a slight trade-off in quality.
 
@@ -51,7 +51,7 @@ Interested to deploy as a web app? Check out [microGPT-deploy](https://github.co
 
 3. **Small-Scale Powerhouse:** Beyond learning and experimentation, microGPT is a suitable option for small-scale applications. It empowers you to integrate AI-powered language generation into projects where efficiency and performance are paramount.
 
-## 🛠️ Empowerment Through Adaptability:
+## Empowerment Through Adaptability:
 
 1. **Customization Capabilities:** microGPT's adaptability empowers you to modify and fine-tune the model to suit your specific goals, offering a canvas for creating AI solutions tailored to your requirements.
 

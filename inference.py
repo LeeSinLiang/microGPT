@@ -8,7 +8,7 @@ device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 # modify the parameters here
 max_length = 512
 model_path = "models/microGPT.pth"
-tokenizer_path = "tokenizer/tokenizer16384_v2.json"
+tokenizer_path = "tokenizer/tokenizer.json"
 n_tokens = 1000
 temperature = 0.8
 top_k = 0

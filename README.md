@@ -41,7 +41,7 @@ By contributing to this repository, you agree to abide by our [Code of Conduct](
 
 ## Resources
 - [Attention is all you need](https://arxiv.org/abs/1706.03762)
-- [Let's build GPT from scratch](https://youtu.be/kCc8FmEb1nY)
+- [Let's build GPT from scratch (Highly Recommend) ](https://youtu.be/kCc8FmEb1nY)
 - [Huggingface GPT 2 implementation](https://github.com/huggingface/transformers/tree/main/src/transformers/models/gpt2)
 
 ## Credits
